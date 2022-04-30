@@ -36,8 +36,8 @@ models:
     # Applies to all files under models/example/
     example:
       materialized: view
-    pra:
+    teama1:
       +schema: TeamB
-    prb:
+    teamb2:
       +schema: TeamA
     
