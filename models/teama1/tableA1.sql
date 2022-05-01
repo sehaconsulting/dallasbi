@@ -6,3 +6,5 @@ union all
 select 'rayyan' as name1
 union all
 select 'pious' as name1
+union all
+select name1 from {{ ref('a') }}
