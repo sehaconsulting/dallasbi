@@ -42,5 +42,5 @@ models:
       +schema: TeamA
     
 dispatch:
-  - macro_namespace: parent_my_new_project
+  - macro_namespace: generate_schema_name
     search_order: ['my_new_project', 'parent_my_new_project']
