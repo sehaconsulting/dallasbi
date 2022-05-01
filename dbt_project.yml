@@ -41,3 +41,6 @@ models:
     teamb2:
       +schema: TeamA
     
+dispatch:
+  - macro_namespace: parent_my_new_project
+    search_order: ['parent_my_new_project', 'my_new_project']
