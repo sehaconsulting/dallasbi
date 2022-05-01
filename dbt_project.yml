@@ -43,4 +43,4 @@ models:
     
 dispatch:
   - macro_namespace: my_new_project
-    search_order: ['parent_my_new_project', 'my_new_project']
+    search_order: ['parent_my_new_project', 'my_new_project', 'dbt']
