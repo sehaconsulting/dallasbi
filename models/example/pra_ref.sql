@@ -1,2 +1,3 @@
 {{ config(materialized='table') }}
-select * from {{ ref('a') }}
+select
+  {{ cents_to_dollars_test(100) }} as amount_usd
