@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: sample_source
+    description: 'references snowflake sample data'
+    database: snowflake_sample_data
+    schema: TPCDS_SF100TCL
+    tables:
+      - name: CALL_CENTER
+        description: 'call center location details'
