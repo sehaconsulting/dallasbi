@@ -5,13 +5,16 @@
     )
 }}
 
-
-select order_id, pt_id, order_date, getdate() as LoadDatetime 
+with a as (
+select a.order_id, pt_id, order_date, b.update_date as LastUpdateDate 
 from {{ source('crsrc', 'epic_order') }} as a
-
-{% if is_incremental() %}
-        inner join {{ source('crsrc', 'epic_order_cr_stat_alter') }} as b on a.order_id = b.order_id
-        where b.update_date > (select max(LoadDatetime) as rd from  {{ this }} )
-{% endif %}
-and a.order_code = 'covid'
+inner join {{ source('crsrc', 'epic_order_cr_stat_alter') }} as b on a.order_id = b.order_id
+where a.order_code = 'covid'
 and b.order_ini = 'ORD'
+)
+
+select * from a
+{% if is_incremental() %}
+        where update_date > (select max(LastUpdateDate) as rd from  {{ this }} )     
+{% endif %}
+
