@@ -15,6 +15,6 @@ and b.order_ini = 'ORD'
 
 select *, getdate() as LoadDatetime from a
 {% if is_incremental() %}
-        where update_date > (select max(LastUpdateDate) as rd from  {{ this }} )     
+        where LastUpdateDate  > (select max(LastUpdateDate) as rd from  {{ this }} )     
 {% endif %}
 
