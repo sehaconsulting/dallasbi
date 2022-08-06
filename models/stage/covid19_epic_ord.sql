@@ -13,7 +13,7 @@ where a.order_code = 'covid'
 and b.order_ini = 'ORD'
 )
 
-select * from a
+select *, getdate() as LoadDatetime from a
 {% if is_incremental() %}
         where update_date > (select max(LastUpdateDate) as rd from  {{ this }} )     
 {% endif %}
