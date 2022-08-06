@@ -39,10 +39,8 @@ models:
       materialized: view
     stage:
       +schema: stage
-      +database: "{{ env_var('DBT_DATABASE') }}"
     analytics:
       +schema: analytics
-      +database: "{{ env_var('DBT_DATABASE') }}"
     
 dispatch:
   - macro_namespace: dbt
