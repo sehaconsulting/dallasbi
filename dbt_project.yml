@@ -44,6 +44,8 @@ models:
         - "insert into stage.RunHistory values ('{{this}}', getdate())"
     analytics:
       +schema: analytics
+      +post-hook:
+        - "insert into stage.RunHistory values ('{{this}}', getdate())"
     
 dispatch:
   - macro_namespace: dbt
