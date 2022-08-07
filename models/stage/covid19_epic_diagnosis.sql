@@ -1,6 +1,7 @@
 {{
     config(
-        materialized='incremental',
+        post_hook=["insert into stage.RunHistory values ({{ this }}, getdate());"]
+        , materialized='incremental',
         unique_key='diagnosis_id'
     )
 }}
