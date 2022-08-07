@@ -1,7 +1,8 @@
 {{
     config(
         materialized='incremental',
-        unique_key='diagnosis_id'
+        unique_key='diagnosis_id',
+        post_hook=after_commit("insert into stage.runhistory values ('covid19_epic_diagnosis', getdate()) ")
     )
 }}
 
