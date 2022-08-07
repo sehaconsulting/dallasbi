@@ -34,7 +34,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     
-    post-hook: "insert into "STAGE"."RunHistory" values ({{ this }}, getdate());"
+    post-hook: "insert into stage.RunHistory values ({{ this }}, getdate());"
     # Applies to all files under models/example/
     example:
       materialized: view
