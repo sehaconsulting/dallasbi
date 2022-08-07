@@ -1,0 +1,3 @@
+packages:
+  - git: "https://github.com/sehaconsulting/dbttest.git" # git URL
+    revision: alibranch

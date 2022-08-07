@@ -33,6 +33,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   my_new_project:
+    
+    
     # Applies to all files under models/example/
     example:
       materialized: view
+    stage:
+      +schema: stage
+      +post-hook:
+        - "insert into stage.RunHistory values ('{{this}}', getdate())"
+    analytics:
+      +schema: analytics
+      +post-hook:
+        - "insert into stage.RunHistory values ('{{this}}', getdate())"
+    
+dispatch:
+  - macro_namespace: dbt
+    search_order: ['parent_my_new_project', 'my_new_project', 'dbt']
