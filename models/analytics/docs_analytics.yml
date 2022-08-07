@@ -1,0 +1,10 @@
+version: 2
+
+models:
+    - name: covid19_epic_event_fact
+      description: "This model captures orders, diagnosis, travel screening and infection event data for covid patients"
+      columns:
+          - name: event_type
+            description: "The type of event that lead to covid19 inclusion"
+            tests:
+                - not_null
