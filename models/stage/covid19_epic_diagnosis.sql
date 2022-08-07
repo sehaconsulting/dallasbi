@@ -2,7 +2,7 @@
     config(
         materialized='incremental',
         unique_key='diagnosis_id',
-        post_hook=[ "insert into RunHistory values ({{ this }}, getdate());" ]
+        post_hook=[ "insert into dev.stage.RunHistory values ({{ this }}, getdate());" ]
     )
 }}
 
