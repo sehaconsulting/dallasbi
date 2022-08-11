@@ -1,4 +1,7 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table'
+            , target = 'covid'
+
+        ) }}
 
 select a.order_id, pt_id, order_date, b.update_date as LastUpdateDate, getdate() as LoadDatetime
 from {{ source('crsrc', 'epic_order') }} as a
