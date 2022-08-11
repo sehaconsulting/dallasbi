@@ -1,5 +1,5 @@
 {{ config(materialized='table'
-            , target = 'covid'
+            , tag = 'covid'
 
         ) }}
 
