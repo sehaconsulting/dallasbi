@@ -3,3 +3,6 @@ version: 2
 models:
     - name: covid19_epic_ord
       +tags: "covid"
+
+    - name: test_tag
+      +tags: "covid"
