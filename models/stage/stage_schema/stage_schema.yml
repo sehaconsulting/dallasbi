@@ -2,4 +2,4 @@ version: 2
 
 models:
     - name: test_tag
-      +tags: "covid"
+      tags: "covid"
